@@ -2,7 +2,7 @@ package com.sunbeam;
 
 public class LinkedList {
 	
-	private Node head, trav;
+	private Node head;
 
 	static class Node{
 		
@@ -38,7 +38,7 @@ public class LinkedList {
 		if(head == null)
 			return;
 		
-		   trav = head;
+		  Node trav = head;
 		
 		while(trav != null) {
 			System.out.print(" " +trav.data);
@@ -48,23 +48,61 @@ public class LinkedList {
 	
 	public void addLast(int val) {
 		
+		Node newNode = new Node(val);
+		
 		if(head == null)
-			addFirst(val);
+			head = newNode;
 		
 		else {
 			
-			Node newNode = new Node(val);
+			Node trav=head;
 			
-			while(trav != null) {
+			while(trav.next != null) {
 				trav=trav.next;
 			}
 			
-			newNode.next = trav;
 			trav.next = newNode;
 			
 			
 		}
 			
 	}
+	
+	public void addPosition(int val, int pos) {
+		
+		Node newNode = new Node(val);
+		
+		if(head == null)
+			head = newNode;
+		else if(pos <= 1)
+			addFirst(val);
+		else {
+			
+			Node trav = head;
+			
+			for(int i=1; i<pos-1 && trav.next != null; i++) 
+				trav = trav.next;	
+			
+			
+			newNode.next = trav.next;
+			trav.next = newNode;
+			
+		}
+	}
+	
+	
+	public void deleteFirst() {
+		
+		if(head == null)
+			return;
+		
+		head = head.next;
+		
+	}
+	
+	
+	
+	
+	
 	
 }
