@@ -14,10 +14,17 @@ public class SinglyLinearLinkedList {
 		
 		list.display();
 		
-		//list.addLast(5);
+//		list.addLast(5);
+//		
+//		list.display();
 		
-		//list.display();
-
+//		list.addPosition(22, 3);
+//		
+//		list.display();
+		
+		list.deleteFirst();
+		list.display();
+		
 	}
 
 }
