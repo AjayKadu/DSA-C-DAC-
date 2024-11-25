@@ -44,6 +44,8 @@ public class LinkedList {
 			System.out.print(" " +trav.data);
 			trav = trav.next;
 		}
+		
+		System.out.println();
 	}
 	
 	public void addLast(int val) {
@@ -99,6 +101,59 @@ public class LinkedList {
 		head = head.next;
 		
 	}
+	
+	
+	public void deleteLast() {
+		
+		
+		if(head == null) {
+			return;
+		}
+		
+		else if(head.next == null) {
+			deleteFirst();
+			return;
+		}
+		else {
+			
+			Node trav = head;
+			
+			while(trav.next.next != null) {
+				trav = trav.next;
+			}
+			
+			trav.next = null;
+		}
+		
+	}
+	
+	public void deletePosition(int pos) {
+		
+		if(head == null)
+			return;
+		else if(head.next == null) {
+			deleteFirst();
+			return;
+		}
+		else {
+			
+			Node trav = head;
+			
+			for (int i = 1; i < pos-1; i++)
+				trav = trav.next;
+			
+			trav.next = trav.next.next;
+			
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
