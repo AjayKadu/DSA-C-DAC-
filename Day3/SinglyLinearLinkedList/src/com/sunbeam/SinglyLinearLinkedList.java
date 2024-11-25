@@ -22,9 +22,14 @@ public class SinglyLinearLinkedList {
 //		
 //		list.display();
 		
-		list.deleteFirst();
-		list.display();
+//		list.deleteFirst();
+//		list.display();
 		
+//		list.deleteLast();
+//		list.display();
+		
+		list.deletePosition(3);
+		list.display();
 	}
 
 }
