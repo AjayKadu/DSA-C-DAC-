@@ -155,7 +155,7 @@ public class LinkedList {
 	
 	public void deletePosition(int pos) {
 		
-		if(pos < 1 || pos > size+1)
+		if(pos < 1 || pos > size)
 			return;
 		
 		if(pos == 1) {
